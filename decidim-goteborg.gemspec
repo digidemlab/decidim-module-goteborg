@@ -6,8 +6,8 @@ require "decidim/goteborg/version"
 
 Gem::Specification.new do |s|
   s.version = Decidim::Goteborg.version
-  s.authors = ["Rupus Reinefjord"]
-  s.email = ["rupus@digidemlab.org"]
+  s.authors = ["Digidem Lab"]
+  s.email = ["hello@digidemlab.org"]
   s.license = "AGPL-3.0-or-later"
   s.homepage = "https://decidim.org"
   s.metadata = {
