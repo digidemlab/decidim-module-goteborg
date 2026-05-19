@@ -18,6 +18,10 @@ module Decidim
       initializer "Goteborg.webpacker.assets_path" do
         Decidim.register_assets_path File.expand_path("app/packs", root)
       end
+
+      config.to_prepare do
+        Decidim::RegistrationForm.include(RegistrationFormOverride)
+      end
     end
   end
 end
