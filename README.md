@@ -1,36 +1,20 @@
-# Decidim::Goteborg
+# Tweaks for the Gothenburg Decidim instance
 
-Tweaks for the Gothenburg Decidim instance.
+## Newsletter on registration
 
-## Usage
+Removes the newsletter checkbox and the newsletter opt-in modal from the
+registration form, and defaults the newsletter subscription to opted in for
+new users.
 
-Goteborg will be available as a Component for a Participatory
-Space.
+### Remove the newsletter checkbox and modal
+* app/overrides/decidim/devise/registrations/new/
 
-## Installation
+### Default newsletter opt-in
+The registration form is patched to set `newsletter` to `true` by default.
+* app/forms/concerns/registration_form_override.rb
+* lib/decidim/goteborg/engine.rb
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem "decidim-goteborg"
-```
-
-And then execute:
-
-```bash
-bundle
-```
-
-## Contributing
-
-Contributions are welcome !
-
-We expect the contributions to follow the [Decidim's contribution guide](https://github.com/decidim/decidim/blob/develop/CONTRIBUTING.adoc).
-
-## Security
-
-Security is very important to us. If you have any issue regarding security, please disclose the information responsibly by sending an email to __info [at] digidemlab [dot] org__ and not by creating a GitHub issue.
-
-## License
-
-This engine is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
+### Skip the newsletter modal on submit
+The registration JS no longer intercepts the form submit to open the
+newsletter modal (the related handlers are disabled).
+* app/packs/src/decidim/user_registrations.js
