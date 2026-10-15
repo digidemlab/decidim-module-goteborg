@@ -3,11 +3,11 @@
 module Decidim
   module Goteborg
     def self.version
-      "0.30"
+      "0.31"
     end
 
     def self.decidim_version
-      "~> 0.30.6"
+      "~> 0.31.0"
     end
   end
 end
